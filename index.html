@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Séries</title>
+    <!-- TODO: garantir que a pasta css/ exista e o arquivo style.css também -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<script>
+    const botoesFiltro = document.querySelectorAll('.filtro');
+    const cards = document.querySelectorAll('.card-serie');
+
+    botoesFiltro.forEach(botao => {
+        botao.addEventListener('click', () => {
+            const filtro = botao.getAttribute('data-filtro');
+
+            cards.forEach(card => {
+                const genero = card.getAttribute('data-genero');
+
+                if (filtro === 'todos' || genero === filtro) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+</script>
+
+<body>
+    <!-- Cabeçalho-->
+    <header>
+        <div class="container">
+            <h1 class="logo">Séries Online</h1>
+            <nav>
+                <ul class="menu">
+                    <li><a href="">Início</a></li>
+                    <li><a href="">Séries</a></li>
+                    <li><a href="">Sobre</a></li>
+                    <li><a href="">Contatos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- Secão destaque-->
+    <section id="inicio" class="secao destaque">
+        <div class="container destaque-conteudo">
+            <div class="destaque-texto">
+                <h2>Descubra as melhores séries e filmes</h2>
+                <p>Essa página tem como objetivo recomendar as melhores séries e filmes
+                    ao mesmo<br> 
+                </p>
+                <p> tempo funciona como forma de estudo e portifólio de html
+                     e estilização CSS.</p>
+                <!-- Filtros Visuais de gêneros-->
+                <div class="filtros">
+                    <button class="filtro" data-genero="todos">Todos</button>
+                    <button class="filtro" data-genero="cyberpunk">Cyberpunk</button>
+                    <button class="filtro" data-genero="animacao">Animação</button>
+                    <button class="filtro" data-genero="ficcao">Ficção Científica</button>
+                    <button class="filtro" data-genero="ficcao">Futurista</button>
+                </div>
+
+            </div>
+            <div class="destaque-iamgem">
+                <!-- trocar por uma imagem relacionada a série-->
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção catálogo de séries -->
+    <section id="series" class="secao secao-cinza">
+        <div class="carrosel-series">
+            <h2 style="text-align: center; color: white;">Séries em destaque</h2>
+            <div class="grid-series">
+
+                <!-- Card 1-->
+                <div class="card-serie" data-genero="ficcao">
+                    <!-- trocar dados das séries-->
+                    <img src="https://upload.wikimedia.org/wikipedia/pt/thumb/f/f6/Dark_%28s%C3%A9rie%29.jpg/250px-Dark_%28s%C3%A9rie%29.jpg"
+                        alt="card-1">
+                    <h3>Dark</h3>
+                    <p class="genero">Gênero: Ficçaõ Científica</p>
+                    <p class="descricao">Sinopse: A trama da série se passa na fictícia cidade alemã de Winden,
+                        quando quatro famílias iniciam uma busca desesperada por respostas após o desaparecimento
+                        de duas crianças que aparenta estar relacionado a um outro desaparecimento ocorrido 33 anos
+                        antes. Aos poucos, segredos familiares passam a ser expostos e um complexo mistério
+                        envolvendo
+                        três gerações começa a se revelar.</p>
+                </div>
+
+                <!-- Card 2-->
+                <div class="card-serie" data-genero="ficcao">
+                    <!-- trocar dados das séries-->
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiFtkZTp_A2LiDqI1sa4r_3w2wqVzQgq5ec5bxRFQR0kBpqvc-_f3pf3hcYjOuIjlUhZmsaP7qqjPmp77CPOKvpEJdr8hL5PfipngbXIyoVSaFJ8i13ZAAoK4Zu35krmMinyE9HB-GnnbM-/s1600/IMG-20180327-WA0047.jpg"
+                        alt="card-2">
+                    <h3>Jogador Nº1</h3>
+                    <p class="genero">Gênero: Futurista</p>
+                    <p class="descricao">Sinopse: Em 2045, a humanidade procura fugir da vida normal através do
+                        OASIS,
+                        um videogame de realidade virtual
+                        criado por James Halliday e Ogden Morrow da Gregarious Games em 2025. Após a morte de
+                        Halliday,
+                        uma mensagem pré-gravada deixada por seu avatar, Anorak, anuncia um desafio, concedendo a
+                        propriedade
+                        do OASIS ao primeiro jogador que encontrar o easter egg dentro dele, que está trancado atrás
+                        de
+                        um
+                        portão que requer três chaves.</p>
+                </div>
+
+                <!-- Card 3-->
+                <div class="card-serie" data-genero="cyberpunk">
+                    <!-- trocar dados das séries-->
+                    <img src="https://m.media-amazon.com/images/M/MV5BM2JkMzM2ZmYtNWU4MS00MjZhLWFhZWUtYWFjYTJkN2RhZDliXkEyXkFqcGc@._V1_.jpg"
+                        alt="card-3">
+                    <h3>Cyberpunk: Edgerunners</h3>
+                    <p class="genero">Gênero: Cyberpunk</p>
+                    <p class="descricao">Sinopse: Em uma distopia dominada por corrupção, crime e implantes
+                        cibernéticos,
+                        um garoto de rua impulsivo mas talentoso chamado David perde tudo o que tem em um tiroteio.
+                        Depois
+                        disso, ele faz a escolha de sobreviver do lado errado da lei como um "mercenário"; um agente
+                        fora da
+                        lei capacitado com alta tecnologia do mercado negro também conhecido como "cyberpunk".</p>
+                </div>
+
+                <!--card 4-->
+                <div class="card-serie" data-genero="ficcao">
+                    <!-- trocar dados das séries-->
+                    <img src="https://upload.wikimedia.org/wikipedia/pt/a/a3/Dune_2021.jpeg" alt="card-3">
+                    <h3>Duna</h3>
+                    <p class="genero">Gênero: Ficção Científica</p>
+                    <p class="descricao">O Imperador decide que a Casa Atreides deve ser destruída.
+                        Entretanto, há uma convenção no Imperium de que se o Imperador atacar uma Grande Casa, todas
+                        as
+                        outras
+                        Casas devem se unir para retaliar o imperador. Para contornar esse obstáculo,
+                        Shaddam faz uso de uma rivalidade milenar entre a Casa Atreides e a Casa Harkonnen
+                        como uma forma de encobrir seu ataque, chamando para isto o brilhante e ambicioso
+                        Barão Vladimir Harkonnen numa tentativa de eliminar seu rival..</p>
+                </div>
+
+                <!-- card 5 -->
+                <div class="card-serie" data-genero="ficcao">
+                    <!-- trocar dados das séries-->
+                    <img src="https://br.web.img3.acsta.net/pictures/23/05/26/17/47/1900372.jpg" alt="card-3">
+                    <h3>Duna 2</h3>
+                    <p class="genero">Gênero: Ficção Científica</p>
+                    <p class="descricao">Este filme de acompanhamento explorará a jornada mítica do Duque Paul
+                        Atreides,
+                        que possui poderes de clarividência que podem permitir que ele guie a humanidade para um
+                        futuro
+                        melhor. Agora unido a Chani e aos Fremen, Paul está em uma guerra de vingança contra os
+                        conspiradores que destruíram sua família. </p>
+                </div>
+
+                <!-- card 6 -->
+                <div class="card-serie" data-genero="ficcao">
+                    <!-- trocar dados das séries-->
+                    <img src="https://resizing.flixster.com/77JxONhWZf0OHznUsn4B7-jB8SY=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvUlRUVjQyNjAyOC53ZWJw"
+                        alt="card-3">
+                    <h3>Love, Death & Robots</h3>
+                    <p class="genero">Gênero: Ficção Científica</p>
+                    <p class="descricao">A série animada consiste em uma coleção de curtas-metragens , produzidos
+                        por
+                        diferentes elencos e equipes, embora alguns episódios compartilhem membros de certas
+                        equipes. O
+                        título da série se refere à conexão temática de cada episódio com um ou mais dos três temas
+                        principais.</p>
+                </div>
+
+                <!-- Card 1-->
+                <div class="card-serie">
+                    <!-- trocar dados das séries-->
+                    <img src="https://upload.wikimedia.org/wikipedia/pt/thumb/f/f6/Dark_%28s%C3%A9rie%29.jpg/250px-Dark_%28s%C3%A9rie%29.jpg"
+                        alt="card-1">
+                    <h3>Dark</h3>
+                    <p class="genero">Gênero: Ficçaõ Científica</p>
+                    <p class="descricao">Sinopse: A trama da série se passa na fictícia cidade alemã de Winden,
+                        quando quatro famílias iniciam uma busca desesperada por respostas após o desaparecimento
+                        de duas crianças que aparenta estar relacionado a um outro desaparecimento ocorrido 33 anos
+                        antes. Aos poucos, segredos familiares passam a ser expostos e um complexo mistério
+                        envolvendo
+                        três gerações começa a se revelar.</p>
+                </div>
+
+                <!-- Card 2-->
+                <div class="card-serie" data-genero="futurista">
+                    <!-- trocar dados das séries-->
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiFtkZTp_A2LiDqI1sa4r_3w2wqVzQgq5ec5bxRFQR0kBpqvc-_f3pf3hcYjOuIjlUhZmsaP7qqjPmp77CPOKvpEJdr8hL5PfipngbXIyoVSaFJ8i13ZAAoK4Zu35krmMinyE9HB-GnnbM-/s1600/IMG-20180327-WA0047.jpg"
+                        alt="card-2">
+                    <h3>Jogador Nº1</h3>
+                    <p class="genero">Gênero: Futurista</p>
+                    <p class="descricao">Sinopse: Em 2045, a humanidade procura fugir da vida normal através do
+                        OASIS,
+                        um videogame de realidade virtual
+                        criado por James Halliday e Ogden Morrow da Gregarious Games em 2025. Após a morte de
+                        Halliday,
+                        uma mensagem pré-gravada deixada por seu avatar, Anorak, anuncia um desafio, concedendo a
+                        propriedade
+                        do OASIS ao primeiro jogador que encontrar o easter egg dentro dele, que está trancado atrás
+                        de
+                        um
+                        portão que requer três chaves.</p>
+                </div>
+
+                <!-- Card 3-->
+                <div class="card-serie" data-genero="cyberpunk">
+                    <!-- trocar dados das séries-->
+                    <img src="https://m.media-amazon.com/images/M/MV5BM2JkMzM2ZmYtNWU4MS00MjZhLWFhZWUtYWFjYTJkN2RhZDliXkEyXkFqcGc@._V1_.jpg"
+                        alt="card-3">
+                    <h3>Cyberpunk: Edgerunners</h3>
+                    <p class="genero">Gênero: Cyberpunk</p>
+                    <p class="descricao">Sinopse: Em uma distopia dominada por corrupção, crime e implantes
+                        cibernéticos,
+                        um garoto de rua impulsivo mas talentoso chamado David perde tudo o que tem em um tiroteio.
+                        Depois
+                        disso, ele faz a escolha de sobreviver do lado errado da lei como um "mercenário"; um agente
+                        fora da
+                        lei capacitado com alta tecnologia do mercado negro também conhecido como "cyberpunk".</p>
+                </div>
+
+                <!--card 4-->
+                <div class="card-serie" data-genero="ficcao">
+                    <!-- trocar dados das séries-->
+                    <img src="https://upload.wikimedia.org/wikipedia/pt/a/a3/Dune_2021.jpeg" alt="card-3">
+                    <h3>Duna</h3>
+                    <p class="genero">Gênero: Ficção Científica</p>
+                    <p class="descricao">O Imperador decide que a Casa Atreides deve ser destruída.
+                        Entretanto, há uma convenção no Imperium de que se o Imperador atacar uma Grande Casa, todas
+                        as
+                        outras
+                        Casas devem se unir para retaliar o imperador. Para contornar esse obstáculo,
+                        Shaddam faz uso de uma rivalidade milenar entre a Casa Atreides e a Casa Harkonnen
+                        como uma forma de encobrir seu ataque, chamando para isto o brilhante e ambicioso
+                        Barão Vladimir Harkonnen numa tentativa de eliminar seu rival..</p>
+                </div>
+
+                <!-- card 5 -->
+                <div class="card-serie" data-genero="ficcao">
+                    <!-- trocar dados das séries-->
+                    <img src="https://br.web.img3.acsta.net/pictures/23/05/26/17/47/1900372.jpg" alt="card-3">
+                    <h3>Duna 2</h3>
+                    <p class="genero">Gênero: Ficção Científica</p>
+                    <p class="descricao">Este filme de acompanhamento explorará a jornada mítica do Duque Paul
+                        Atreides,
+                        que possui poderes de clarividência que podem permitir que ele guie a humanidade para um
+                        futuro
+                        melhor. Agora unido a Chani e aos Fremen, Paul está em uma guerra de vingança contra os
+                        conspiradores que destruíram sua família. </p>
+                </div>
+
+                <!-- card 6 -->
+                <div class="card-serie" data-genero="ficcao">
+                    <!-- trocar dados das séries-->
+                    <img src="https://resizing.flixster.com/77JxONhWZf0OHznUsn4B7-jB8SY=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvUlRUVjQyNjAyOC53ZWJw"
+                        alt="card-3">
+                    <h3>Love, Death & Robots</h3>
+                    <p class="genero">Gênero: Ficção Científica</p>
+                    <p class="descricao">A série animada consiste em uma coleção de curtas-metragens , produzidos
+                        por
+                        diferentes elencos e equipes, embora alguns episódios compartilhem membros de certas
+                        equipes. O
+                        título da série se refere à conexão temática de cada episódio com um ou mais dos três temas
+                        principais.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Sobre-->
+    <section id="sobre" class="secao">
+        <div class="container">
+            <h2>Sobre o catálogo</h2>
+            <p>
+                O catálogo inlcui filmes, séries e animações, ele é bastante diversificado,
+                mas é
+                focado principalmente em ficção científica e temas futuristas.
+
+            </p>
+        </div>
+    </section>
+
+    <!-- Seção Contato-->
+    <section id="contato" class="secao secao-cinza">
+        <div class="container" style="color: white;">
+            <h2>contato</h2>
+            <p>Quer enviar sugestões de séries?</p>
+            <ul class="lista-contato">
+                <li><strong>Email:</strong>jpktolentino@gmail.com</li>
+                <li><strong>Instagram:</strong>jpktolentino</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Rodapé-->
+    <footer>
+        <div class="container">
+            <p>João Pedro Kloster Tolentino; 2026; todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

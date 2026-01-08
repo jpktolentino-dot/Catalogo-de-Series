@@ -1,0 +1,219 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo geral */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #111;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* Container padrão */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ===== HEADER ===== */
+header {
+    background-color: #111;
+    color: #fff;
+    padding: 15px 0;
+}
+
+.logo {
+    font-size: 30px;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.menu li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu li a:hover {
+    color: #9130ff;
+}
+
+/* Alinhamento do header */
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ===== SEÇÕES ===== */
+.secao {
+    padding: 60px 0;
+}
+
+.secao-cinza {
+    background-color: #222;
+}
+
+.secao h2 {
+    margin-bottom: 20px;
+}
+
+/* ===== DESTAQUE ===== */
+.destaque {
+    background-color: #222;
+    color: #fff;
+}
+
+.destaque-conteudo {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.destaque-texto {
+    flex: 1;
+}
+
+.destaque-texto h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.filtros {
+    margin-top: 20px;
+}
+
+.filtro {
+    padding: 8px 15px;
+    margin-right: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #ab52ff;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.filtro:hover {
+    background-color: #9130ff;
+}
+
+/* ===== GRID DE SÉRIES ===== */
+.grid-series {
+    display: flex;
+    margin-right: 20px;
+    width: max-content;
+
+    animation: slide-series 30s linear infinite;
+}
+
+.grid-series:hover {
+    animation-play-state: paused;
+}
+
+/* ===== CARD ===== */
+.card-serie {
+    background-color: #fff;
+    padding: 15px; /* antes 15px */
+    border-radius: 6px;
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 0 0 300px;
+    width: 300px;
+}
+
+.card-serie img {
+    width: 100%;
+    height: 300px; /* antes 200px */
+    object-fit: contain;
+    border-radius: 4px;
+    margin-bottom: 10px;
+
+    transition: transform 0.4s ease;
+}
+
+
+.card-serie h3 {
+    font-size: 16px;
+}
+
+.genero {
+    font-size: 14px;
+}
+
+/* ===== CONTATO ===== */
+.lista-contato {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.lista-contato li {
+    margin-bottom: 5px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 14px;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+    .destaque-conteudo {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header .container {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+.descricao{
+    font-family: OCR A Std, monospace;
+    font-size: 13px;
+}
+
+.card-serie {
+    background-color: #000000;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+
+    /* ANIMAÇÃO */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-serie:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.25);
+}
+
+.carrosel-series {
+    overflow: hidden;
+    width: 100%;
+}
+
+
+@keyframes slide-series {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
